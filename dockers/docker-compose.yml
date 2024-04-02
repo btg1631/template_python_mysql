@@ -1,0 +1,29 @@
+version: '3.9'
+services:
+  python:
+    # container_name: ${CONTAINER_NAME_PREFIX}_python
+    image: ${IMAGE_NAME}
+    build:
+      context: .
+      args:
+        GIT_BRANCH_NAME: ${GIT_BRANCH_NAME}
+        APP_DIR_NAME: ${APP_DIR_NAME}      
+        GITHUB_URI: ${GITHUB_URI}      
+      dockerfile: Dockerfile
+    command: sleep infinity
+  mysql:
+    container_name: ${CONTAINER_NAME_PREFIX}_mysql
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: cocolabhub
+      MYSQL_LOWER_CASE_TABLE_NAMES: 1      
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: cocolabhub
+      MYSQL_PASSWORD: cocolabhub
+    ports:
+      - "3306:3306"  
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql        
+  
+
