@@ -1,4 +1,8 @@
 # toy_ERDs
 
-- ERD_ppt
-- ERD_cloud
+- 문제 제출자 작성 하기 : 4지 선다형, 5문항, 문항마다 다른 점수, 복수 정답 입력
+- 응시자 문제 풀기 : 응시자 이름 입력 -> 문제 풀기 -> 다음 응시자 여부(계속:c, 종료:x)
+- 통계 : 각 응시자 채점, 과목 평균 표시
+- ERD 설계 규칙 : 정규화 준수
+
+- [동작 Youtube](https://www.youtube.com/watch?v=Sfc6h4Xyy_Y)
